@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestBuy Electronics Showcase</title>
+    <style>
+        body { background: linear-gradient(135deg, #f79533, #f37055); margin: 0; padding: 0; font-family: 'Arial', sans-serif; }
+        .header { background-color: #003087; color: white; padding: 10px 20px; text-align: center; }
+        .header button { background: #ffcc00; border: 0; padding: 10px 15px; margin: 0 5px; cursor: pointer; }
+        .main { display: flex; flex-wrap: wrap; padding: 20px; justify-content: center; }
+        .product { margin: 10px; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 2px 7px rgba(0,0,0,0.2); width: 300px; }
+        .product img { width: 100%; border-radius: 10px; }
+        .footer { background-color: #003087; color: white; text-align: center; padding: 20px; position: fixed; left: 0; bottom: 0; width: 100%; }
+        form { background: white; padding: 20px; margin-top: 20px; }
+        .form-section { margin-bottom: 10px; }
+        .form-section label { display: block; margin-bottom: 5px; }
+        .form-section input, .form-section textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        .submit-btn { background: #f37055; color: white; padding: 10px 20px; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>BestBuy Electronics</h1>
+    <div>
+        <button onclick="displaySection('home')">Home</button>
+        <button onclick="displaySection('products')">Products</button>
+        <button onclick="displaySection('contact')">Contact</button>
+    </div>
+</div>
+
+<div id="home" class="main section">
+    <h2>Welcome! Explore the Best Electronic Products</h2>
+</div>
+
+<div id="products" class="main section" style="display:none;">
+    <div class="product">
+        <img src="path-to-your-product-image.jpg" alt="Product 1">
+        <h3>Product 1</h3>
+        <p>Description of Product 1. The best features and benefits described in brief.</p>
+    </div>
+    <!-- Repeat for other products -->
+</div>
+
+<div id="contact" class="main section" style="display:none;">
+    <form>
+        <h2>Contact Us</h2>
+        <div class="form-section">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name">
+        </div>
+        <div class="form-section">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="form-section">
+            <label for="message">Message</label>
+            <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send</button>
+    </form>
+</div>
+
+<div class="footer">
+    &copy; 2023 BestBuy Electronics
+</div>
+
+<script>
+    function displaySection(sectionId) {
+        document.querySelectorAll('.section').forEach((section) => {
+            section.style.display = 'none';
+        });
+        document.getElementById(sectionId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
